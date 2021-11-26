@@ -9,6 +9,6 @@ class Reservation(models.Model):
     Date = models.DateField()
     time = models.TimeField()
 
-
+      
     def __str__(self):
         return self.name

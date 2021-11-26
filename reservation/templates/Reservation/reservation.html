@@ -1,4 +1,5 @@
 {% extends 'home/base.html' %}
+{% load bootstrap4 %}
 {% load static %}
 
 
@@ -56,17 +57,21 @@
     
     {% endcomment %}
 
-    <form action="" method="post">
+    <form action="" method="POST">
       {% csrf_token %}
       {% csrf_token %}
-      {{ form }}
-      <div class="text-center">
-          <button type="submit" class="book-a-table-btn scrollto">Submit Reservation</button>
-      </div>      
+      {% bootstrap_form form %}
+      {% buttons %}
+      <br>
+      <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+      {% endbuttons %}
+    </form>      
       
-    </form>
+    
 
   </div>
 </section>
+
+
 
 {% endblock body %}
