@@ -1,79 +1,121 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
-{% block homepage %}
+{% block body %}
+
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+    <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
+    <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 17:00 AM - 23:00 PM</span></i>
+  </div>
+</section><!-- Top Bar -->
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <div class="logo me-auto">
+      <h1><a href="index.html">Charlie's Grillhouse</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+        <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+        <li><a class="nav-link scrollto" href="#events">Events</a></li>
+        <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
+        <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>     
+                 
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <a href="{% url 'reservation:reserve_table' %}" class="book-a-table-btn scrollto">Book a table</a>
+
+  </div>
+</header><!-- End Header -->
+
 
 <!-- ======= Hero Section ======= -->
 <section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade pointer-event" data-bs-ride="carousel">
+  <div class="hero-container">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade pointer-event" data-bs-ride="carousel">
+      <ol class="carousel-indicators" id="hero-carousel-indicators">
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="0" class=""></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="1" class=""></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="2" class="active" aria-current="true"></li>
+      </ol>
 
-        <ol class="carousel-indicators" id="hero-carousel-indicators"><li data-bs-target="#heroCarousel" data-bs-slide-to="0" class=""></li><li data-bs-target="#heroCarousel" data-bs-slide-to="1" class=""></li><li data-bs-target="#heroCarousel" data-bs-slide-to="2" class="active" aria-current="true"></li></ol>
+    <div class="carousel-inner" role="listbox">
 
-        <div class="carousel-inner" role="listbox">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item" style="background: url(static/assets/img/slide/slide-1.jpg);">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span>Every Saturday</span>Rodizio</h2>
-                <p class="animate__animated animate__fadeInUp">You start with an extensive buffet that consists of a selection of marinated and grilled vegetables, special cheeses and a variety of other hot dishes. Our gauchos will bring you the best peace of meat by choice as much as you can eat!
-                  We offer you a special prize! for only $35 per person(for kids under 12 years $25).</p>                
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
-              </div>
+      <!-- Slide 1 -->
+      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-1.jpg);">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown"><span>Every Saturday</span>Rodizio</h2>
+            <p class="animate__animated animate__fadeInUp">You start with an extensive buffet that consists of a selection of marinated and grilled vegetables, special cheeses and a variety of other hot dishes. Our gauchos will bring you the best peace of meat by choice as much as you can eat!
+            We offer you a special prize! for only $35 per person(for kids under 12 years $25).</p>                
+            <div>
+              <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="{% url 'reservation:reserve_table' %}" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
             </div>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item" style="background: url(static/assets/img/slide/slide-2.jpg);">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Friday Night</h2>
-                <p class="animate__animated animate__fadeInUp">Every last Friday of the month our special house-dj will come and make a party! Everbody is welcome to our Brazilian night with nice cocktails!</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item active" style="background: url(assets/static/img/slide/slide-3.jpg);">
-            <div class="carousel-background"><img src="static/assets/img/slide/slide-3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Welcome at Charlie's Grillhouse</h2>
-                <p class="animate__animated animate__fadeInUp">We invite you to a wonderfully relaxing evening at Charlie's Grillhouse. Breathe in the vibrent scent of authentic Brazilian cuisine. Dressed as real gauchos, our waiters are on hand to serve you the most beautiful and best steaks in town.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
       </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-2.jpg);">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown">Friday Night</h2>
+            <p class="animate__animated animate__fadeInUp">Every last Friday of the month our special house-dj will come and make a party! Everbody is welcome to our Brazilian night with nice cocktails!</p>
+            <div>
+              <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="{% url 'reservation:reserve_table' %}" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item active" style="background: url(assets/static/img/slide/slide-3.jpg);">
+        <div class="carousel-background"><img src="static/assets/img/slide/slide-3.jpg" alt=""></div>
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown">Welcome at Charlie's Grillhouse</h2>
+            <p class="animate__animated animate__fadeInUp">We invite you to a wonderfully relaxing evening at Charlie's Grillhouse. Breathe in the vibrent scent of authentic Brazilian cuisine. Dressed as real gauchos, our waiters are on hand to serve you the most beautiful and best steaks in town.</p>
+            <div>
+              <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+              <a href="{% url 'reservation:reserve_table' %}" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section><!-- End Hero -->
 
-  <main id="main">
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+  </div>
+</div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
       <div class="container-fluid">
 
         <div class="row">
@@ -107,10 +149,10 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+</section><!-- End About Section -->
 
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us">
       <div class="container">
 
         <div class="section-title">
@@ -147,10 +189,10 @@
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+</section><!-- End Why Us Section -->
 
-    <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu">
+<!-- ======= Menu Section ======= -->
+<section id="menu" class="menu">
       <div class="container">
 
         <div class="section-title">
@@ -254,10 +296,10 @@
         </div>
 
       </div>
-    </section><!-- End Menu Section -->
+</section><!-- End Menu Section -->
 
-    <!-- ======= Specials Section ======= -->
-    <section id="specials" class="specials">
+<!-- ======= Specials Section ======= -->
+<section id="specials" class="specials">
       <div class="container">
 
         <div class="section-title">
@@ -319,10 +361,10 @@
         </div>
 
       </div>
-    </section><!-- End Specials Section -->
+</section><!-- End Specials Section -->
 
-    <!-- ======= Events Section ======= -->
-    <section id="events" class="events">
+<!-- ======= Events Section ======= -->
+<section id="events" class="events">
       <div class="container">
 
         <div class="section-title">
@@ -550,16 +592,63 @@
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
       </div>
-    </section><!-- End Events Section -->
+</section><!-- End Events Section -->
 
-    <!-- ======= Book A Table Section ======= -->    
-    
-    {% include 'Reservation/reservation.html' %}
-     
-    <!-- End Book A Table Section -->
+<!-- ======= Book A Table Section ======= -->
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <div class="section-title">
+      <h2>Book a <span>Table</span></h2>
+      <p>Just fill in the form below if you want to book a table in our restaurant and dont forget to submit.</p>
+    </div>
+
+  <form action="#" role="form" class="php-email-form" >     
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 form-group">
+      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+      <div class="validate"></div>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+      <div class="validate"></div>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+      <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+      <div class="validate"></div>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3">
+      <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+      <div class="validate"></div>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3">
+      <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+      <div class="validate"></div>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3">
+      <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+      <div class="validate"></div>
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+    <div class="validate"></div>
+  </div>
+
+  <div class="mb-3">
+    <div class="loading">Loading</div>
+    <div class="error-message"></div>
+    <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+  </div>
+  <div class="text-center"><button class="php_email_form_submit" type="submit">Submit Booking</button></div>
+</form>
+</div>
+</section>
+<!-- End Book A Table Section -->
+
+<!-- ======= Gallery Section ======= -->
+<section id="gallery" class="gallery">
       <div class="container-fluid">
 
         <div class="section-title">
@@ -636,10 +725,10 @@
         </div>
 
       </div>
-    </section><!-- End Gallery Section -->
+</section><!-- End Gallery Section -->
 
-    <!-- ======= Chefs Section ======= -->
-    <section id="chefs" class="chefs">
+<!-- ======= Chefs Section ======= -->
+<section id="chefs" class="chefs">
       <div class="container">
 
         <div class="section-title">
@@ -700,10 +789,10 @@
         </div>
 
       </div>
-    </section><!-- End Chefs Section -->
+</section><!-- End Chefs Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials">
       <div class="container position-relative">
 
         <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events" data-aos="fade-up" data-aos-delay="100">
@@ -934,10 +1023,10 @@
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+</section><!-- End Testimonials Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
@@ -1004,8 +1093,8 @@
         </form>
 
       </div>
-    </section><!-- End Contact Section -->
+</section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
-{% endblock %}
+{% endblock body %}
