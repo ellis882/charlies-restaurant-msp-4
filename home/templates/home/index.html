@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block body %}
@@ -16,7 +16,7 @@
     <div class="carousel-inner" role="listbox">
 
       <!-- Slide 1 -->
-      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-1.jpg);">
+      <div class="carousel-item" style="background: url(assets/img/slide/slide-1.jpg);">
         <div class="carousel-container">
           <div class="carousel-content">
             <h2 class="animate__animated animate__fadeInDown"><span>Every Saturday</span>Rodizio</h2>
@@ -71,7 +71,8 @@
 
   </div>
 </div>
-</section><!-- End Hero -->
+  </section><!-- End Hero -->
+
 
 <main id="main">
 
@@ -359,7 +360,7 @@
             </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="static/assets/img/event-private.jpg" class="img-fluid" alt="">
+                  <img src="{% static 'static/assets/img/event-private.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Private Parties</h3>
@@ -382,7 +383,7 @@
             </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 3">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="static/assets/img/event-custom.jpg" class="img-fluid" alt="">
+                  <img src="{% static 'static/assets/img/event-custom.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Movie &amp; Dinner Night</h3>

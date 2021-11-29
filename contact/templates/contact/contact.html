@@ -1,8 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load bootstrap4 %}
 
 {% block body %}
 
+<br>
+<br>
 <section id="contact" class="contact">
     <div class="container">
 
@@ -49,9 +52,10 @@
       
       <form method="POST" action="">
           {% csrf_token %}          
-          {{ form }}
+          {% bootstrap_form form %}
         
           {% buttons %}
+          <br>
           <div class="text-center"><button type="submit" class="book-a-table-btn scrollto">Send Message</button></div>
           {% endbuttons %}
       </form>
