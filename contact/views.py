@@ -12,22 +12,23 @@ def send_email(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
 
-            try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+        try:
+            send_mail(subject, message, from_email, ['admin@example.com'])
 
-            except BadHeaderError:
-                return HttpResponse('invalid header')
+        except BadHeaderError:
+            return HttpResponse('invalid header')
 
-            return redirect('contact:send_success')
-        else:
-            form = ContactForm()
+        return redirect('contact:send_success')
+
+    else:
+        form = ContactForm()
 
     context = {
         'form': form
-    }
+        }
 
     return render(request, 'contact/contact.html', context)
 
 
 def send_success(request):
-    return HttpResponse('thanks for your email ^_^')
+    return HttpResponse('thank you for your email ^_^')

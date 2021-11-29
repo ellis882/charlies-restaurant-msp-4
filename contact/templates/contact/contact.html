@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load bootstrap4 %}
 
@@ -47,13 +46,16 @@
         </div>
       </div>
 
-      <form action="" method="post">
-          {% csrf_token %}
-          {{form}}
-          {% buttons %}        
-            <div class="text-center"><button type="submit" class="book-a-table-btn scrollto">Send Message</button></div>
+      
+      <form method="POST" action="">
+          {% csrf_token %}          
+          {{ form }}
+        
+          {% buttons %}
+          <div class="text-center"><button type="submit" class="book-a-table-btn scrollto">Send Message</button></div>
           {% endbuttons %}
       </form>
+      
 
     </div>
 </section>
