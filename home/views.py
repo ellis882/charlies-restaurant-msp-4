@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 
-def home(request):
+def index(request):
     context = {}
+    print(True)
     return render(request, "home/index.html", context)

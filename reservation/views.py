@@ -1,8 +1,7 @@
-from .models import Reservation
 from django.shortcuts import render
-from .forms import ReserveTableForm
-
 from reservation.models import Reservation
+from .models import Reservation
+from .forms import ReserveTableForm
 
 
 def reserve_table(request):

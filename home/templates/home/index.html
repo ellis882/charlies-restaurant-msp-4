@@ -1,8 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
-{% block body %}
-
+{% block content %}
 <!-- ======= Hero Section ======= -->
 <section id="hero">
   <div class="hero-container">
@@ -16,7 +15,7 @@
     <div class="carousel-inner" role="listbox">
 
       <!-- Slide 1 -->
-      <div class="carousel-item" style="background: url(assets/img/slide/slide-1.jpg);">
+      <div class="carousel-item" style="background: url(static/assets/img/slide/slide-1.jpg);">
         <div class="carousel-container">
           <div class="carousel-content">
             <h2 class="animate__animated animate__fadeInDown"><span>Every Saturday</span>Rodizio</h2>
@@ -45,7 +44,7 @@
       </div>
 
       <!-- Slide 3 -->
-      <div class="carousel-item active" style="background: url(assets/static/img/slide/slide-3.jpg);">
+      <div class="carousel-item active" style="background: url(static/assets/img/slide/slide-3.jpg);">
         <div class="carousel-background"><img src="static/assets/img/slide/slide-3.jpg" alt=""></div>
         <div class="carousel-container">
           <div class="carousel-content">
@@ -71,8 +70,7 @@
 
   </div>
 </div>
-  </section><!-- End Hero -->
-
+</section><!-- End Hero -->
 
 <main id="main">
 
@@ -82,7 +80,7 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style="background-image: url(&quot;static/assets/img/about.jpg&quot;);">
+          <div class="col-lg-5 align-items-stretch video-box" style="background-image: url(&quot;static/assets/img/about.jpg&quot);">
             <a href="https://www.youtube.com/watch?v=aG_aDzlrOHM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
@@ -292,7 +290,7 @@
                     <p class="fst-italic">Picanha is our best meat and famous in Brazil!</p>                    
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/specials-1.jpg" alt="" class="img-fluid">
+                    <img src="{% static 'assets/img/specials-1.jpg' %}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -303,7 +301,7 @@
                     <p class="fst-italic">You should really try these gamba's sometimes. You can have them with or without a little bit spicy.</p>                     
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/specials-2.jpg" alt="" class="img-fluid">
+                    <img src="{% static 'assets/img/specials-2.jpg' %}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -314,7 +312,7 @@
                     <p class="fst-italic">Tiramisu made according to traditional Italian receipe and favorite dessert from our guests. </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="static/assets/img/specials-3.jpg" alt="" class="img-fluid">
+                    <img src="{% static 'assets/img/specials-3.jpg' %}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>             
@@ -360,7 +358,7 @@
             </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="{% static 'static/assets/img/event-private.jpg' %}" class="img-fluid" alt="">
+                  <img src="static/assets/img/event-private.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Private Parties</h3>
@@ -383,7 +381,7 @@
             </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 3">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="{% static 'static/assets/img/event-custom.jpg' %}" class="img-fluid" alt="">
+                  <img src="static/assets/img/event-custom.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Movie &amp; Dinner Night</h3>
@@ -506,7 +504,7 @@
             </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="static/assets/img/event-private.jpg" class="img-fluid" alt="">
+                  <img src="{% static 'static/assets/img/event-private.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Private Parties</h3>
@@ -942,4 +940,4 @@
 
   </main><!-- End #main -->
 
-{% endblock body %}
+{% endblock content %}
