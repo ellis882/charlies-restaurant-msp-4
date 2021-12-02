@@ -171,16 +171,17 @@
         </div>
 
         <div class="row menu-container" style="position: relative; height: 675px;">
-
+          {% for menu in menu_list %}
           <div class="col-lg-6 menu-item filter-starters" style="position: absolute; left: 0px; top: 0px;">
             <div class="menu-content">
-              <a href="#">Rib Eye(300gr)</a><span>$30</span>
+              <a href="#">{{ menu.name }}</a><span>${{ menu.price }}</span>
             </div>
             <div class="menu-ingredients">
-              served with fries, salad and baked banana
+              {{ menu.description }}
             </div>
+            {% endfor %}
           </div>
-
+          {% comment %}
           <div class="col-lg-6 menu-item filter-specialty" style="position: absolute; left: 0px; top: 75px;">
             <div class="menu-content">
               <a href="#">Picanha(300gr)</a><span>$32</span>
@@ -192,7 +193,7 @@
 
           <div class="col-lg-6 menu-item filter-starters" style="position: absolute; left: 0px; top: 150px;">
             <div class="menu-content">
-              <a href="#">Maminha</a><span>$30</span>
+              <a href="#">Maminha(300gr)</a><span>$30</span>
             </div>
             <div class="menu-ingredients">
               Served with fries, salad and baked banana
@@ -252,7 +253,7 @@
               Tiramisu according to traditional Italian receipe              
             </div>
           </div>
-
+          {% endcomment %}
         </div>
 
       </div>

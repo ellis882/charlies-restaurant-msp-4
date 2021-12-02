@@ -24,10 +24,10 @@ urlpatterns = [
     path('reserve_table/', include("reservation.urls",
                                    namespace="reservation")),
     path('contact/', include("contact.urls", namespace="contact")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = "Resturant AdminPanel"
 admin.site.site_title = "Resturant App Admin "
