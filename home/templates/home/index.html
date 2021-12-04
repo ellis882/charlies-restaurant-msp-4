@@ -165,7 +165,7 @@
               <li data-filter="" class="filter-active">Show All</li>
                             
               {% for category in categories %}
-              <li data-filter=".filter-{{ category }}">Steaks</li>
+              <li data-filter=".filter-steaks">{{ category }}</li>
               {% endfor %}
               {% comment %}
               <li data-filter=".filter-salads">Desserts</li>
@@ -176,7 +176,7 @@
         </div>
 
         <div class="row menu-container" style="position: relative; height: 675px;">
-          {% for menu in menu_list %}
+          {% for menu in meals_list %}
           {% if menu.category == category %}
           <div class="col-lg-6 menu-item filter-{{ category }}" style="position: absolute; left: 0px; top: 0px;">
             <div class="menu-content">
