@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'contact',
     'menu',
     'chefs',
+    'events',
 ]
 
 MIDDLEWARE = [

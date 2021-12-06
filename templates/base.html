@@ -60,7 +60,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>          
           <li><a class="nav-link scrollto" href="{% url 'menu:meals_list' %}">Menu</a></li>          
-          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'events:event_reservation_form' %}">Events</a></li>
           <li><a class="nav-link scrollto" href="{% url 'chefs:team_list' %}">Chefs</a></li>                   
           <li><a class="nav-link scrollto" href="{% url 'contact:send_email' %}">Contact</a></li>
         </ul>
