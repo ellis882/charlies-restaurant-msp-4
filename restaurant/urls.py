@@ -25,6 +25,7 @@ urlpatterns = [
                                    namespace="reservation")),
     path('contact/', include("contact.urls", namespace="contact")),
     path('menu/', include("menu.urls", namespace="menu")),
+    path('chefs/', include("chefs.urls", namespace="chefs")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

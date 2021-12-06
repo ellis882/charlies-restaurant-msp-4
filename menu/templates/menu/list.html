@@ -30,18 +30,19 @@
       </div>
 
       <div class="row menu-container" style="position: relative; height: 675px;">
-        {% for menu in meals_list %}
-        {% if menu.category == category %}
+        {% for meal in meals_list %}
+        {% if meal.category == category %}
         <div class="col-lg-6 menu-item filter-{{ category }}" style="position: absolute; left: 0px; top: 0px;">
           <div class="menu-content">
-            <a href="#">{{ menu.name }}</a><span>${{ menu.price }}</span>
+            <a href="#">{{ meal.name }}</a><span>${{ meal.price }}</span>
           </div>
           <div class="menu-ingredients">
-            {{ menu.description }}
+            {{ meal.description }}
           </div>
-          {% endif %}
-          {% endfor %}
+          
         </div>
+        {% endif %}
+        {% endfor %}
         {% comment %}
         <div class="col-lg-6 menu-item filter-specialty" style="position: absolute; left: 0px; top: 75px;">
           <div class="menu-content">
