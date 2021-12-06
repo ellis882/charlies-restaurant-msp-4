@@ -11,4 +11,4 @@ def meals_list(request):
         'categories': categories,
     }
 
-    return render(request, 'home/index.html', context)
+    return render(request, 'menu/list.html', context)
