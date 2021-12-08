@@ -5,6 +5,8 @@ from django.conf import settings
 class Table(models.Model):
     table_nr = models.IntegerField()
     table_size = models.IntegerField()
+    opening_time = models.IntegerField(null=True)
+    closing_time = models.IntegerField(null=True)
 
     def __str__(self):
         return str(self.table_nr)
