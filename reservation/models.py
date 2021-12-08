@@ -1,13 +1,22 @@
 from django.db import models
+from django.conf import settings
+
+
+class Table(models.Model):
+    table_nr = models.IntegerField()
+    table_size = models.IntegerField()
+
+    def __str__(self):
+        return str(self.table_nr)
 
 
 class Reservation(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField()
-    phone = models.IntegerField(blank=True)
-    number_of_persons = models.IntegerField()
-    Date = models.DateField()
-    time = models.TimeField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    nr_of_people = models.IntegerField()
+    reservation_date_time_start = models.DateTimeField()
+    reservation_date_time_end = models.DateTimeField()
 
     def __str__(self):
-        return str(self.name)
+        return str(self.user)
