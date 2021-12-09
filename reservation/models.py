@@ -13,7 +13,7 @@ class Table(models.Model):
     table_size = models.CharField(max_length=15, choices=TABLE_SIZE_LIST)
 
     def __str__(self):
-        return str(self.table_size)
+        return f'tablenumber {self.table_nr} for {self.table_size}'
 
 
 class Reservation(models.Model):
@@ -24,4 +24,4 @@ class Reservation(models.Model):
     date_time_end = models.DateTimeField()
 
     def __str__(self):
-        return str(self.user)
+        return f'{self.user} has booked {self.table} from {self.date_time_start} until {self.date_time_end}'

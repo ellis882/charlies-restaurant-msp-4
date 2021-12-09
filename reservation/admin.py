@@ -4,7 +4,7 @@ from .models import Table, Reservation
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ['user', 'table',
-                    'date_time_start']
+                    'date_time_start', 'date_time_end']
     search_fields = ['user', 'date_time_start']
     list_filter = ['user', 'date_time_start']
 
