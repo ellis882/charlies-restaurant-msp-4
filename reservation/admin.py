@@ -3,10 +3,10 @@ from .models import Table, Reservation
 
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ['user', 'nr_of_people', 'table',
-                    'reservation_date_time_start']
-    search_fields = ['user', 'reservation_date_time_start']
-    list_filter = ['user', 'reservation_date_time_start']
+    list_display = ['user', 'table',
+                    'date_time_start']
+    search_fields = ['user', 'date_time_start']
+    list_filter = ['user', 'date_time_start']
 
 
 class TableAdmin(admin.ModelAdmin):
