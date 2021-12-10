@@ -3,6 +3,7 @@ from django .views.generic import ListView, FormView
 from .models import Table, Reservation
 from .forms import AvailabilityForm
 from .availability import check_availability
+import datetime
 
 
 class TableList(ListView):
@@ -15,21 +16,21 @@ class ReservationList(ListView):
 
 class ReservationView(FormView):
     form_class = AvailabilityForm
-    template_name = 'availability_form.html'
+    template_name = 'reservation/availability_form.html'
 
     def form_valid(self, form):
         data = form.cleaned_data
         table_list = Table.objects.filter(table_size=data['table_size'])
         available_tables = []
         for table in table_list:
-            if check_availability(table, date, data['time_start'], data['time_end']):
+            if check_availability(table, data['time_start'], data['time_end']):
                 available_tables.append(table)
         if len(available_tables) > 0:
             table = available_tables[0]
             reservation = Reservation.objects.create(
                 user=self.request.user,
                 table=table,
-                date=date,
+                date=datetime.date.today(),
                 time_start=data['time_start'],
                 time_end=data['time_end']
             )

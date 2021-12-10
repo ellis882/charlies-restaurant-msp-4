@@ -7,6 +7,6 @@ urlpatterns = [
     path('table_list/', TableList.as_view(), name='TableList'),
     path('reservation_list/', ReservationList.as_view(),
          name='ReservationList'),
-    path('book/', ReservationView.as_view(),
+    path('book_a_table/', ReservationView.as_view(),
          name='ReservationView'),
 ]

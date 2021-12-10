@@ -9,6 +9,6 @@ class AvailabilityForm(forms.Form):
         ('eight persons', 'EIGHT PERSONS'),
     )
     table_size = forms.ChoiceField(choices=TABLE_SIZE_LIST, required=True)
-    date = forms.DateField(required=True, input_formats=["%yyyy, %mm, %dd", ])
+    date = forms.DateField(required=True, input_formats=['%Y-%m-%d', ])
     time_start = forms.TimeField(required=True, input_formats=['%H:%M', ])
     time_end = forms.TimeField(required=True, input_formats=['%H:%M', ])
