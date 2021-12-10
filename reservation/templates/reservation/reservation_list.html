@@ -7,6 +7,8 @@
     <title>Reservation List</title>
 </head>
 <body>
-    {{reservation_list}}
+    {% for reservation in reservation_list %}
+    <h2>{{reservation}}</h2>
+    {% endfor %}
 </body>
 </html>

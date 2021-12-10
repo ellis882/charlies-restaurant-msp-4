@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from datetime import datetime
 
 
 class Table(models.Model):
@@ -20,8 +21,9 @@ class Reservation(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    date_time_start = models.DateTimeField()
-    date_time_end = models.DateTimeField()
+    date = models.DateField(default=datetime.now)
+    time_start = models.TimeField(default=datetime.now)
+    time_end = models.TimeField(default=datetime.now)
 
     def __str__(self):
-        return f'{self.user} has booked {self.table} from {self.date_time_start} until {self.date_time_end}'
+        return f'{self.user} has booked {self.table} at {self.date} from {self.time_start} until {self.time_end}'
