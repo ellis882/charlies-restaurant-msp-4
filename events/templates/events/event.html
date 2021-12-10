@@ -250,7 +250,56 @@
             <br>
             <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit</button></div>
             {% endbuttons %}
-          </form>     
+          </form>
+          
+          <form action="" method="POST" >     
+            {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <label for="id_name">Name:</label>
+              <input type="text" name="name" class="form-control" title required id="id_name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <label for="id_email">Email:</label>  
+              <input type="email" class="form-control" name="email" title required id="id_email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <label for="id_phone">Phone:</label>
+              <input type="text" class="form-control" name="phone" title required id="id_phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+                <label for="id_type_of_event">Type of event:</label>
+                <select class="form-control" name="type_of_event" title required id="id_type_of_event" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+                <option value selected>----</option>
+                <option value="private partie">PRIVATE PARTY</option>
+                <option value="birthday party">BIRTHDAY PARTY</option>
+                <option value="Diner and movie">DINER AND MOVIE</option>
+                </select>
+                <div class="validate"></div>
+              </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <label for="id_Date_of_event">Date of event:</label> 
+              <input type="date" name="date" class="form-control" title required id="id_Date_of_event" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <label for="id_number_of_persons">Number of persons:</label>
+              <input type="number" class="form-control" name="number_of_persons" title required id="id_number_of_persons" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+                        
+          </div>
+          <div class="form-group mt-3">
+            <label for="id_message">Message:</label>
+            <textarea class="form-control"title required id="id_message" name="message" rows="5"></textarea>
+            <div class="validate"></div>
+          </div>
+          <br>
+          <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+        </form> 
 
     </div>
 </section>    
