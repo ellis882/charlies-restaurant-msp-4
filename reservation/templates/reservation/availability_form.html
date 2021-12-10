@@ -1,16 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Table</title>
-</head>
-<body>
-    <form action="" method="POST">
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Book a <span>Table</span></h2>
+      <p>To book a table online you can fill in the form below and submit.</p>
+    </div> 
+    
+    
+
+    <form action="" role="form" class="" method="POST" >     
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Booking a Table</button>
-    </form>
-</body>
-</html>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          <label for="id_email">Email:</label>  
+          <input type="email" class="form-control" name="email" id="id_email" placeholder="" data-rule="email" data-msg="Please enter a valid email">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          <label for="id_phone">Phone:</label>
+          <input type="text" class="form-control" name="phone" id="id_phone" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <label for="id_table_size">Table Size:</label>
+            <select type="number" class="form-control" name="people" id="id_table_size" placeholder="" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+            <option value="two persons">TWO PERSONS</option>
+            <option value="four persons">FOUR PERSONS</option>
+            <option value="six persons">SIX PERSONS</option>
+            <option value="eight persons">EIGHT PERSONS</option>
+            </select>
+            <div class="validate"></div>
+          </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_date">Date:</label> 
+          <input type="date" name="date" class="form-control" id="id_date" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_time_start">Time start:</label>
+          <input type="time" class="form-control" name="time" id="id_time_start" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+            <label for="id_time_end">Time end:</label>
+            <input type="time" class="form-control" name="time" id="id_time_end" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <div class="validate"></div>
+          </div>
+        
+      </div>
+      <div class="form-group mt-3">
+        <label for="id_notes">Notes to consider:</label>
+        <textarea class="form-control" name="message" rows="5" placeholder=""></textarea>
+        <div class="validate"></div>
+      </div>
+      <br>
+      <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+    </form> 
+    
+    
+    {% comment %}
+    <form action="" method="POST">
+      {% csrf_token %}    
+      {% bootstrap_form form %}
+      {% buttons %}
+      <br>
+      <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+      {% endbuttons %}
+    </form>  
+    {% endcomment %}    
+      
+    
+  </div>
+</section>
+
+{% endblock content %}
