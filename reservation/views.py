@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django .views.generic import ListView, FormView
-from .models import Table, Reservation, Customer
+from .models import Table, Reservation
 from .forms import AvailabilityForm
 from .availability import check_availability
 import datetime
@@ -28,7 +28,7 @@ class ReservationView(FormView):
         if len(available_tables) > 0:
             table = available_tables[0]
             reservation = Reservation.objects.create(
-                user=self.request.user,                
+                user=self.request.user,
                 table=table,
                 date=datetime.date.today(),
                 time_start=data['time_start'],
