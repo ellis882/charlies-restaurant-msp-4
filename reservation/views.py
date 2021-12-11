@@ -28,8 +28,7 @@ class ReservationView(FormView):
         if len(available_tables) > 0:
             table = available_tables[0]
             reservation = Reservation.objects.create(
-                user=self.request.user,
-                customer_detail=customer_detail,
+                user=self.request.user,                
                 table=table,
                 date=datetime.date.today(),
                 time_start=data['time_start'],

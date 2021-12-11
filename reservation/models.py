@@ -27,8 +27,7 @@ class Table(models.Model):
 
 class Reservation(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
-    customer_detail = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
+                             on_delete=models.CASCADE)     
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     date = models.DateField(default=datetime.now)
     time_start = models.TimeField(default=datetime.now)
