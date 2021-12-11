@@ -3,6 +3,14 @@ from django.conf import settings
 from datetime import datetime
 
 
+class Customer(models.Model):
+    email = models.EmailField()
+    phone = models.IntegerField()
+
+    def __str__(self):
+        return str(self.email)
+
+
 class Table(models.Model):
     table_nr = models.IntegerField()
     TABLE_SIZE_LIST = (
@@ -20,6 +28,7 @@ class Table(models.Model):
 class Reservation(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
+    customer_detail = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     date = models.DateField(default=datetime.now)
     time_start = models.TimeField(default=datetime.now)

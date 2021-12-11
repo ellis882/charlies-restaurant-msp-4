@@ -1,7 +1,7 @@
 from django import forms
 
 
-class AvailabilityForm(forms.Form):
+class AvailabilityForm(forms.Form):    
     TABLE_SIZE_LIST = (
         ('two persons', 'TWO PERSONS'),
         ('four persons', 'FOUR PERSONS'),
