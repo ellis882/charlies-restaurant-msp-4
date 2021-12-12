@@ -20,7 +20,16 @@
     <form action="" method="POST" >     
         {% csrf_token %}
       <div class="row">     
-        
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_email">Email:</label> 
+          <input type="email" name="email" class="form-control" id="id_email" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <label for="id_phone">Phone:</label> 
+          <input type="number" name="phone" class="form-control" id="id_phone" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
         <div class="col-lg-4 col-md-6 form-group mt-3">
             <label for="id_table_size">Table Size:</label>            
             <select type="number" class="form-control" name="people" id="id_table_size" placeholder="" data-rule="minlen:1" data-msg="Please enter at least 1 chars">

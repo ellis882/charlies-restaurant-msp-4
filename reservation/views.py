@@ -29,6 +29,8 @@ class ReservationView(FormView):
             table = available_tables[0]
             reservation = Reservation.objects.create(
                 user=self.request.user,
+                email=email,
+                phone=phone,
                 table=table,
                 date=datetime.date.today(),
                 time_start=data['time_start'],

@@ -21,6 +21,8 @@ class Reservation(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    email = models.EmailField(default=False)
+    phone = models.IntegerField(default=0)
     date = models.DateField(default=datetime.now)
     time_start = models.TimeField(default=datetime.now)
     time_end = models.TimeField(default=datetime.now)
