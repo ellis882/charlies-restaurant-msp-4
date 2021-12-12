@@ -22,11 +22,10 @@
           
         </div>
       </div> 
-          
+        
       <div class="row menu-container" style="position: relative; height: 675px;">
         {% for meal in meals_list %}
-          
-        <div class="col-lg-6 menu-item filter-steaks" style="position: absolute; left: 0px; top: 0px;">                  
+        <div class="col-lg-6 menu-item filter-{{ meal.category }}" style="position: absolute; left: 0px; top: 0px;">                              
           <div class="menu-content">            
             <a href="">{{ meal.meal }}</a><span>${{ meal.price }}</span>
           </div>
@@ -37,7 +36,7 @@
         </div>          
         {% endfor %}
       </div>
-      
+        
     </div>
 </section>
 
