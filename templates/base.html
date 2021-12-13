@@ -64,10 +64,10 @@
           <li><a class="nav-link scrollto" href="{% url 'chefs:team_list' %}">Chefs</a></li>                   
           <li><a class="nav-link scrollto" href="{% url 'contact:send_email' %}">Contact</a></li>
           {% if user.is_authenticated %}
-          <li><a class="nav-link scrollto" href="">Logout</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
-          <li><a class="nav-link scrollto" href="">Register</a></li>
-          <li><a class="nav-link scrollto" href="">Login</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'account_signup' %}">Register</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'account_login' %}">Login</a></li>
           {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

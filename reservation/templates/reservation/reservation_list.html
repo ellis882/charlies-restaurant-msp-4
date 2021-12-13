@@ -37,7 +37,7 @@
             <h3>Time end:{{ reservation.time_end}}</h3>
         </div>         
         <br>
-        <div class="text-center"><a href="{{ reservation.cancel_reservation_url }}"><button class="book-a-table-btn scrollto" type="submit">Cancel Booking</button></a></div>
+        <div class="text-center"><a href="{{reservation.cancel_reservation_url}}"><button class="book-a-table-btn scrollto" type="submit">Cancel Booking</button></a></div>
         {% endfor %}
     </div> 
   </div>

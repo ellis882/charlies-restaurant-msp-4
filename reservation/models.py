@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from datetime import datetime
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 
 
 class Table(models.Model):

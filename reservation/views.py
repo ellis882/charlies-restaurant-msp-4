@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django .views.generic import ListView, FormView, DeleteView
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from .models import Table, Reservation
 from .forms import AvailabilityForm
 from .availability import check_availability
@@ -53,4 +53,5 @@ class ReservationView(FormView):
 
 class CancelReservationView(DeleteView):
     model = Reservation
+    template_name = 'reservation/reservation_confirm_delete.html'
     success_url = reverse_lazy('reservation:ReservationList')
