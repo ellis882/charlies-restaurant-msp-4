@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django .views.generic import ListView, FormView
+from django .views.generic import ListView, FormView, DeleteView
+from django.urls import reverse, reverse_lazy
 from .models import Table, Reservation
 from .forms import AvailabilityForm
 from .availability import check_availability
@@ -13,6 +14,14 @@ class TableList(ListView):
 class ReservationList(ListView):
     model = Reservation
 
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_staff:
+            reservation_list = Reservation.objects.all()
+            return reservation_list
+        else:
+            reservation_list = Reservation.objects.filter(user=self.request.user)
+            return reservation_list
+        
 
 class ReservationView(FormView):
     form_class = AvailabilityForm
@@ -40,3 +49,8 @@ class ReservationView(FormView):
             return HttpResponse(reservation)
         else:
             return HttpResponse('Sorry, this table_size is not available!!')
+
+
+class CancelReservationView(DeleteView):
+    model = Reservation
+    success_url = reverse_lazy('reservation:ReservationList')
