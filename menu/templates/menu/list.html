@@ -14,8 +14,8 @@
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
               
-          <ul id="menu-flters"> 
-            {% for category in categories %}
+          <ul id="menu-flters">           
+            {% for category in categories %}            
             <li data-filter=".filter-{{ category }}" class="filter-active">{{ category }}</li>
             {% endfor %}
           </ul>

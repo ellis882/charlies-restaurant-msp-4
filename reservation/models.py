@@ -1,6 +1,6 @@
+from datetime import datetime
 from django.db import models
 from django.conf import settings
-from datetime import datetime
 from django.urls import reverse_lazy
 
 
@@ -33,4 +33,3 @@ class Reservation(models.Model):
 
     def cancel_reservation_url(self):
         return reverse_lazy('reservation:CancelReservationView', args=[self.pk, ])
-  
