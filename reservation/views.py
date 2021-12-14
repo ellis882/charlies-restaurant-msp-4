@@ -1,14 +1,10 @@
 from django.shortcuts import render, HttpResponse
-from django .views.generic import ListView, FormView, DeleteView
+from django .views.generic import ListView, FormView, DeleteView, View
 from django.urls import reverse_lazy
 from .models import Table, Reservation
 from .forms import AvailabilityForm
 from .availability import check_availability
 import datetime
-
-
-class TableList(ListView):
-    model = Table
 
 
 class ReservationList(ListView):
@@ -21,7 +17,56 @@ class ReservationList(ListView):
         else:
             reservation_list = Reservation.objects.filter(user=self.request.user)
             return reservation_list
-        
+
+
+
+class TableDetailView(View):
+    def get(self, request, *args, **kwargs):
+        table_size = self.kwargs.get('table_size', None)
+        form = AvailabilityForm()
+        table_list = Table.objects.filter(table_size=table_size)
+
+        if len(table_list) > 0:
+            table = table_list[0]
+            table_size = dict(table.TABLE_SIZE_LIST).get(table.table_size, None)
+            context = {
+                'table_size': table_size,
+                'form': form,
+            }
+            return render(request, 'table_detail_view.html', context)
+        else:
+            return HttpResponse('Table-size does not exist')
+
+    def post(self, request, *args, **kwargs):
+        table_size = self.kwargs.get('table_size', None)
+        table_list = Table.objects.filter(table_size=table_size)
+        form = AvailabilityForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+
+        available_tables = []
+        for table in table_list:
+            if check_availability(table, data['time_start'], data['time_end']):
+                available_tables.append(table)
+
+        if len(available_tables) > 0:
+            table = available_tables[0]
+            reservation = Reservation.objects.create(
+                user=self.request.user,
+                email=email,
+                phone=phone,
+                table=table,
+                date=datetime.date.today(),
+                time_start=data['time_start'],
+                time_end=data['time_end']
+            )
+            reservation.save()
+            return HttpResponse(reservation)
+        else:
+            return HttpResponse('Sorry, this table_size is not available!!')
+
+
 
 class ReservationView(FormView):
     form_class = AvailabilityForm
