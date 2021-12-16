@@ -29,7 +29,7 @@ class ReservationView(FormView):
         table_list = Table.objects.filter(table_size=data['table_size'])
         available_tables = []
         for table in table_list:
-            if check_availability(table, data['time_start'], data['time_end']):
+            if check_availability(table, date, data['time_start'], data['time_end']):
                 available_tables.append(table)
         if len(available_tables) > 0:
             table = available_tables[0]
