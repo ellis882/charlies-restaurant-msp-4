@@ -29,14 +29,12 @@ class ReservationView(FormView):
         table_list = Table.objects.filter(table_size=data['table_size'])
         available_tables = []
         for table in table_list:
-            if check_availability(table, date, data['time_start'], data['time_end']):
+            if check_availability(table, data['time_start'], data['time_end']):
                 available_tables.append(table)
         if len(available_tables) > 0:
             table = available_tables[0]
             reservation = Reservation.objects.create(
                 user=self.request.user,
-                email=email,
-                phone=phone,
                 table=table,
                 date=datetime.date.today(),
                 time_start=data['time_start'],
@@ -47,7 +45,7 @@ class ReservationView(FormView):
         else:
             return HttpResponse('Sorry, this table_size is not available!!')
 
-
+    
 class CancelReservationView(DeleteView):
     model = Reservation
     template_name = 'reservation/reservation_confirm_delete.html'

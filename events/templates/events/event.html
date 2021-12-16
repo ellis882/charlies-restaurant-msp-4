@@ -289,6 +289,16 @@
             <br>
             <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Send</button></div>
         </form>
+        {% comment %}
+        <form action="" method="POST">
+          {% csrf_token %}    
+          {% bootstrap_form form %}
+          {% buttons %}
+          <br>
+          <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
+          {% endbuttons %}
+        </form>   
+        {% endcomment %}
     </div>
 </section>    
 {% endblock content %}
