@@ -51,28 +51,10 @@ The goal of this website is:
 -	As an owner I want to control the online bookings of the restaurant
 
 ### Wireframes
-The wireframes were designed using [Balsamiq](https://balsamiq.com/).Layouts were created for mobile and desktop to assist the design decisions before coding. They're accessible in the following links:
-
-**Desktop**
-
-* [Home Page]()
-* [Menu Page]()
-* [Events Page]()
-* [Chefs Page]()
-* [Contact Page]()
-* [Book a table Page]()
-
-**Mobile**
-
-* [Home Page]()
-* [Menu Page]()
-* [Events Page]()
-* [Chefs Page]()
-* [Contact Page]()
-* [Book a table Page]()
+The wireframes were designed using [Balsamiq](https://balsamiq.com/).Layouts were created for mobile and desktop to assist the design decisions before coding. They're accessible in the following link: [wireframes](wireframes/milestone4-project-restaurant-charlies.pdf)
 
 ### Surface
-The colour palette that was used for this website was the green colour of the Brazilian flag with a medium dark shade of gray.
+The colour palette that was used for this website was the green colour(#009c3b) of the Brazilian flag with a medium dark shade of gray(rgba(255,255,255,0.08)).
 The medium shade of grey colour blends very good with a bright colour like the green that i used because it relates good to the restaurant which is a Brazilian Grillhouse.
 
 Fonts used are:
@@ -116,10 +98,10 @@ There are no feautures left to implement.
 * [GitHub](https://github.com/)
   * Used for managing and storing my code.
 
-* [Django]()
+* [Django](https://www.djangoproject.com/)
   * Django is a high-level Python web framework that enables rapid development of secure and maintainable websites.
 
-* [Heroku]() 
+* [Heroku](https://id.heroku.com/login) 
   * Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
 
 * [Google Fonts](https://fonts.google.com/)
@@ -159,7 +141,7 @@ All html pages were checked using [W3C Markup Validation](https://validator.w3.o
 The CSS file was checked using [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) and passed with no errors.
 
 ### JavaScript Validation
-All html pages were checked using []() and passed with no errors.
+All Javascript were checked using []() and passed with no errors.
 
 ### User Story Testing
 
@@ -176,7 +158,7 @@ All html pages were checked using []() and passed with no errors.
     * A contact form is located on the contact page which is accessible from the navbar. 
 
 * -	As a customer I want the possibility to cancel my reservation
-    * 
+    * When registered and logged in you can access your booking(s) and cancel it yourself. After you come back to the page before.
 
 * As a new customer I want to know about upcoming events held at the restaurant.
    * An event slide show is showing on the events page with all the information for customers to view. Each event has its own dedicated information. You can fill in the event reservation form to book an event with the restaurant manager.
@@ -185,7 +167,7 @@ All html pages were checked using []() and passed with no errors.
     * On the contact page you can find a google map and telephone and email to contact the restaurant.
 
 * -	As an owner I want to avoid double bookings.
-    * 
+    * availability of the tables are checked and when all tables are already booked you can not book that table.
 
 * -	As an owner I want to control the online bookings, events, chefs section and menu list of the restaurant
     * There is an admin site at the backend with a login that gives you the oppertunity to make necessary changes.
@@ -193,11 +175,24 @@ All html pages were checked using []() and passed with no errors.
 ---
 
 ## 5. Deployment
+* This project was deployed to [Heroku](https://www.heroku.com/).
+
+    - Steps for deployment:
+        - Fork or clone this repository.
+        - Create a new Heroku app.
+        - Prepare environment and settings.py file.        
+        - Click on [Deploy]().
 
 ---
 
 ## 6. Credits
 ### Content
+* the template for the restaurant website came from [Bootstrapmade](https://bootstrapmade.com/bootstrap-restaurant-templates/)
 ### Code
+* the code for the menu, chefs, events and contact apps came from [Technoligy IT](https://www.youtube.com/watch?v=QVDJ1BJ2qnE&list=PLBTOBXTz1YFZK0moSgoZq93V_AdvrUGSj&index=15)
+* the code for the reservation app came from [DarshanDev](https://www.youtube.com/watch?v=yenjz1Wv9Yo)
 ### Media
+* The images at the website came from [Unsplash](https://unsplash.com/)
 ### Acknowledgements
+* My mentor for helpful feedback
+* Tutor support at Code Institute for their support
