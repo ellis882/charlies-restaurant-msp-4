@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 {% load static %}
 
 
@@ -70,7 +69,7 @@
     {% comment %}
     <form action="" method="POST">
       {% csrf_token %}    
-      {% bootstrap_form form %}
+      {{form.as_p}}
       {% buttons %}
       <br>
       <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Submit Booking</button></div>
