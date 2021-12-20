@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-4 col-md-6 form-group mt-3">
           <label for="id_phone">Phone:</label> 
-          <input type="number" name="phone" class="form-control" id="id_phone" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <input type="number" name="phone" class="form-control" id="id_phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
           <div class="validate"></div>
         </div>
         <div class="col-lg-4 col-md-6 form-group mt-3">
@@ -49,12 +49,14 @@
         </div>
         <div class="col-lg-4 col-md-6 form-group mt-3">
           <label for="id_time_start">Time start:</label>
-          <input type="time" class="form-control" name="time_start" id="id_time_start" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <input type="time" class="form-control" name="time_start" id="id_time_start" min="17:00" max="21:30" required  data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <small>Booking hours are from 1700am to 2130pm</small>
           <div class="validate"></div>
         </div>
         <div class="col-lg-4 col-md-6 form-group mt-3">
             <label for="id_time_end">Time end:</label>
-            <input type="time" class="form-control" name="time_end" id="id_time_end" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <input type="time" class="form-control" name="time_end" id="id_time_end" min="18:00" max="23:00" required data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <small>Booking hours are from 1800am until 2300pm</small>
             <div class="validate"></div>
           </div>
         
