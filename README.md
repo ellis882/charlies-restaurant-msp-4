@@ -136,12 +136,15 @@ Browser compatibility was also tested using the Lambdatest App.
 The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse]() which allowed for testing on additional devices - no errors were recorded.
 
 ### W3C Validation
-All html pages were checked using [W3C Markup Validation](https://validator.w3.org/) and passed with no errors.
+All html pages were checked using [W3C Markup Validation](https://validator.w3.org/).
 
-The CSS file was checked using [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) and passed with no errors.
+The CSS file was checked using [W3C CSS Validation](https://jigsaw.w3.org/css-validator/).
 
 ### JavaScript Validation
-All Javascript were checked using []() and passed with no errors.
+All Javascript were checked using [JSHint](https://jshint.com/).
+
+### Python Validation
+All Python were checked using [PEP8](http://pep8online.com/).
 
 ### User Story Testing
 
