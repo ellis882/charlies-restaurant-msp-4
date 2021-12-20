@@ -7,7 +7,6 @@ from .forms import AvailabilityForm
 from .availability import check_availability
 
 
-
 class ReservationList(ListView):
     model = Reservation
 
@@ -35,6 +34,8 @@ class ReservationView(FormView):
             table = available_tables[0]
             reservation = Reservation.objects.create(
                 user=self.request.user,
+                email=data['email'],
+                phone=data['phone'],
                 table=table,
                 date=datetime.date.today(),
                 time_start=data['time_start'],

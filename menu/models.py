@@ -6,7 +6,8 @@ class Menu(models.Model):
     objects = models.Manager()
     meal = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL,
+                                 null=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     slug = models.SlugField(blank=True, null=True)
 

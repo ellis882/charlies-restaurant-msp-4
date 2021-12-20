@@ -3,7 +3,7 @@ from django import forms
 
 class AvailabilityForm(forms.Form):
     email = forms.EmailField(required=True)
-    phone = forms.IntegerField(required=True)    
+    phone = forms.IntegerField(required=True)
     TABLE_SIZE_LIST = (
         ('two persons', 'TWO PERSONS'),
         ('four persons', 'FOUR PERSONS'),

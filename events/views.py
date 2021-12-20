@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from .models import Events
 from .forms import EventForm
-from events.models import Events
 
 
 def event_reservation_form(request):
