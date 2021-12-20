@@ -55,20 +55,20 @@
       {% csrf_token %}
       <div class="row">
         <div class="col-lg-4 col-md-6 form-group">
-          <label for="id_name">Name:</label>
-          <input type="text" name="name" class="form-control" title required id="id_name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <label for="id_first_name">First Name:</label>
+          <input type="text" name="first_name" class="form-control" title required id="id_first_name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="validate"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 form-group">
+          <label for="id_last_name">Last Name:</label>
+          <input type="text" name="last_name" class="form-control" title required id="id_last_name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
           <div class="validate"></div>
         </div>
         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-          <label for="id_email">Email:</label>
-          <input type="email" class="form-control" name="email" title required id="id_email" data-rule="email" data-msg="Please enter a valid email">
+          <label for="id_email_address">Email:</label>
+          <input type="email" class="form-control" name="email_address" title required id="id_email_address" data-rule="email" data-msg="Please enter a valid email">
           <div class="validate"></div>
-        </div>
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-          <label for="id_subject">Subject:</label>
-          <input type="text" class="form-control" name="subject" title required id="id_subject" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-          <div class="validate"></div>
-        </div>
+        </div>        
         <div class="form-group mt-3">
           <label for="id_message">Message:</label>
           <textarea class="form-control" name="message" rows="5" title required id = "id_message"></textarea>
@@ -77,8 +77,15 @@
         </div>      
         <br>
         <div class="text-center"><button class="book-a-table-btn scrollto" type="submit">Send</button></div>
-    </form>      
-
+    </form>
+    
+    {% comment %}
+    <form action="" method="POST">     
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit">Submit</button>
+    </form>  
+    {% endcomment %}
     </div>
 </section>
 

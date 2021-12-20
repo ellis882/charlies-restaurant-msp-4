@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .forms import EventForm
 
 
@@ -10,7 +11,12 @@ def event_reservation_form(request):
 
         if event_form.is_valid():
             event_form.save()
+            return redirect('events:send_success')
 
     context = {'form': event_form}
 
     return render(request, 'events/event.html', context)
+
+
+def send_success(request):
+    return HttpResponse('Thanks for your email we will contact you soon!')

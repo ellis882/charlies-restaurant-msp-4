@@ -2,9 +2,8 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=200)
-    email = forms.EmailField(required=True)
-    # phone = forms.CharField()
-    subject = forms.CharField(required=True, max_length=300,)
+    first_name = forms.CharField(max_length=50, required=True)
+    last_name = forms.CharField(max_length=50, required=True)
+    email_address = forms.EmailField(max_length=150, required=True)
     message = forms.CharField(widget=forms.Textarea, required=True,
                               max_length=1000)
