@@ -3,7 +3,7 @@
 ![Charlie's Grillhouse]()
 
 Charlie’s Grillhouse is an imagined restaurant in New York.
-The restaurant website is built for portfolio project 4 for Code Institute. The assignment is to build a full stack website using HTML, CSS, JAVASCRIPT, PYTHON and DJANGO with relational database MySQL or Postgres. Some features to include are; a date/time based bookingsystem and avoid double bookings. A multiple table occupancies and an option for cacellation.
+The restaurant website is built for portfolio project 4 for Code Institute. The assignment is to build a full stack website using HTML, CSS, JAVASCRIPT, PYTHON and DJANGO with relational database MySQL or Postgres. Some features to include are; a date/time based bookingsystem and avoiding double bookings. A multiple table occupancies and an option for cacellation.
 
 You can visit the deployed website [here]().
 
@@ -74,11 +74,11 @@ Fonts used are:
 *  **Events** - There is a page where you can see which events to book at the restaurant with the details. There are three types of events to book, birthday parties, private parties and a dinner and movie night. There is also an Event Reservation Form that you can fill in to book a partie. You need to know fill in your name, email and phonenumber, the number of people, date and type of event. You will be contacted by the manager to discuss further details.
 *  **Chefs** - There is a page where you can see who the grillchef, chef and restaurant manager are of Charlie's Grillhouse. They provide an image, title and social media of the team.
 *  **Contact Form** - Visitors can contact the restaurant via the contact page using the contact form for any further information or queries. There is also a google map image where the restaurant is.
-* **Online Booking Form** - Reservations can be made online.
+* **Online Booking Form** - Reservations can be made online and can be cancelled online.
 *  **Footer** - The footer dislays links to the restaurants social media accounts, the restaurant logo and slogan.
 
 ### Features Left to Implement
-There are no feautures left to implement.
+The option for online ordering and working with coupons to give as a present or for marketing purposes (becoming loyal customers).
 
 ---
 
@@ -146,10 +146,10 @@ All Javascript were checked using []() and passed with no errors.
 ### User Story Testing
 
 * As a new/ returning customer I want to make a reservation online or by phone
-    * "Book A Table" link is immediately accesible on the home page via the navbar and call to action button. This button links to the booking section on the home page which holds a booking form will all necessary inputs to make a reservation.
+    * "Book A Table" link is immediately accesible on the home page via the navbar and call to action button when you are logged in or had registered. This button links to the booking section on the bbok a table page which holds a booking form with all necessary inputs to make a reservation. On this page you can also go to cancel booking. When you go there you will see your booking and the option to cancel your booking.
 
 * As a new customer I want to know about the restaurant concept, history, chef and food.
-    * On the homepage you find a section about the history. The Chefs and menu pages are on separate pages when clicking on the navbar links.
+    * On the homepage you find a section about the history. The Chefs and Menu pages are on separate pages when clicking on the navbar links.
 
 * As a new customer I want to see the restaurant's social presence.
     * Social media icons are located on the site footer which is featured on every page. On the homepage you will find a gallery with images of the restaurant
@@ -161,13 +161,13 @@ All Javascript were checked using []() and passed with no errors.
     * When registered and logged in you can access your booking(s) and cancel it yourself. After you come back to the page before.
 
 * As a new customer I want to know about upcoming events held at the restaurant.
-   * An event slide show is showing on the events page with all the information for customers to view. Each event has its own dedicated information. You can fill in the event reservation form to book an event with the restaurant manager.
+   * An event slide show is showing on the events page with all the information for customers to view. Each event has its own dedicated information. You can fill in the event reservation form to book an event with the restaurant manager. The restaurant manager will contact you for further details of the event. In the administration system of the restaurant the details are stored.
 
 * -	As a new customer I want to know where to find the restaurant.
     * On the contact page you can find a google map and telephone and email to contact the restaurant.
 
 * -	As an owner I want to avoid double bookings.
-    * availability of the tables are checked and when all tables are already booked you can not book that table.
+    * availability of the tables are checked and when all tables are already booked you can not book that table. You will get a message. At the backend in the administration system the owner can manage and see all the details of the booking.
 
 * -	As an owner I want to control the online bookings, events, chefs section and menu list of the restaurant
     * There is an admin site at the backend with a login that gives you the oppertunity to make necessary changes.
