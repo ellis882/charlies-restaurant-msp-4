@@ -92,7 +92,7 @@ The option for online ordering and working with coupons to give as a present or 
 * [Bootstrap 4](https://getbootstrap.com/)
   * A restaurant template.
 
-* [Javascript]()
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
   * Adding interactive behavior to web pages.
 
 * [GitHub](https://github.com/)
@@ -136,12 +136,10 @@ Browser compatibility was also tested using the Lambdatest App.
 The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse]() which allowed for testing on additional devices - no errors were recorded.
 
 ### W3C Validation
-All html pages were checked using [W3C Markup Validation](https://validator.w3.org/).
-
-The CSS file was checked using [W3C CSS Validation](https://jigsaw.w3.org/css-validator/).
+The CSS file was checked using [W3C CSS Validation](validation/css3-msp4.png).
 
 ### JavaScript Validation
-All Javascript were checked using [JSHint](https://jshint.com/).
+Main Javascript were checked using [JSHint](validation/jshint-msp4.png).
 
 ### Python Validation
 All Python were checked using [PEP8](http://pep8online.com/).
