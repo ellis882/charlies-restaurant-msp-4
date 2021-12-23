@@ -29,7 +29,9 @@ class Reservation(models.Model):
     time_end = models.TimeField(default=datetime.now)
 
     def __str__(self):
-        return f'{self.user} has booked {self.table} at {self.date} from {self.time_start} until {self.time_end}'
+        return f'{self.user} has booked {self.table} at {self.date} \
+               from {self.time_start} until {self.time_end})'
 
     def cancel_reservation_url(self):
-        return reverse_lazy('reservation:CancelReservationView', args=[self.pk, ])
+        return reverse_lazy('reservation:CancelReservationView',
+                            args=[self.pk, ])

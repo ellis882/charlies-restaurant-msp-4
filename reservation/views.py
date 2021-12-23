@@ -15,7 +15,8 @@ class ReservationList(ListView):
             reservation_list = Reservation.objects.all()
             return reservation_list
         else:
-            reservation_list = Reservation.objects.filter(user=self.request.user)
+            reservation_list = Reservation.objects.filter(user=self
+                                                          .request.user)
             return reservation_list
 
 
@@ -46,7 +47,7 @@ class ReservationView(FormView):
         else:
             return HttpResponse('Sorry, this table_size is not available!!')
 
-    
+
 class CancelReservationView(DeleteView):
     model = Reservation
     template_name = 'reservation/reservation_confirm_delete.html'
