@@ -634,12 +634,12 @@ section {
   animation-delay: 0s;
   -webkit-animation: pulsate-btn 2s;
   animation: pulsate-btn 2s;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
+  -webkit-animation-timing-function: steps(5,end);
+  animation-timing-function: steps(5,end);
   opacity: 1;
   border-radius: 50%;
   border: 5px solid rgba(0, 156, 59, 0.7);
@@ -1364,7 +1364,7 @@ section {
   margin: 0 0 15px 0;
 }
 #footer p {
-  font-size: 15;
+  font-size: 15px;
   font-style: italic;
   padding: 0;
   margin: 0 0 40px 0;
