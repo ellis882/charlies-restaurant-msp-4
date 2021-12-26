@@ -3,6 +3,10 @@ from .models import Team
 
 
 def team_list(request):
+    """
+    get name, title and image from Team in models
+    to use info for the templates in team.html
+    """
     team_list = Team.objects.all()
 
     context = {

@@ -3,6 +3,10 @@ from django.utils.text import slugify
 
 
 class Menu(models.Model):
+    """
+    menu card of restaurant can be managed from admin panel
+    all important info is available to manage 
+    """
     objects = models.Manager()
     meal = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
@@ -25,6 +29,10 @@ class Menu(models.Model):
 
 
 class Category(models.Model):
+    """
+    the category steaks, desserts and specials 
+    that is showed at the frontend
+    """
     objects = models.Manager()
     title = models.CharField(max_length=30)
 

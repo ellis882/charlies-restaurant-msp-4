@@ -8,6 +8,10 @@ from .availability import check_availability
 
 
 class ReservationList(ListView):
+    """
+    as staff you can see all the reservations at the front side
+    as a user you can only see your own booking(s)
+    """
     model = Reservation
 
     def get_queryset(self, *args, **kwargs):
@@ -21,6 +25,12 @@ class ReservationList(ListView):
 
 
 class ReservationView(FormView):
+    """
+    when filling in the form, if table size within start and end time
+    is available the booking will be saved and it confirms
+    the booking that user had made, if table is not available you
+    get a message that table size is not available
+    """
     form_class = AvailabilityForm
     template_name = 'reservation/availability_form.html'
 
@@ -49,6 +59,11 @@ class ReservationView(FormView):
 
 
 class CancelReservationView(DeleteView):
+    """
+    after user confirmed the deleted booking you get
+    redirected to page of reservation list where you see
+    that booking is deleted from list
+    """
     model = Reservation
     template_name = 'reservation/reservation_confirm_delete.html'
     success_url = reverse_lazy('reservation:ReservationList')

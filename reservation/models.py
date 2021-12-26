@@ -5,6 +5,10 @@ from django.urls import reverse_lazy
 
 
 class Table(models.Model):
+    """
+    each table in the restaurant have a table number and it contains
+    a table size for the number of persons that can sit at the table
+    """
     table_nr = models.IntegerField()
     TABLE_SIZE_LIST = (
         ('two persons', 'TWO PERSONS'),
@@ -19,6 +23,13 @@ class Table(models.Model):
 
 
 class Reservation(models.Model):
+    """
+    all the information that is neccesary to book a table,
+    the user needs to be logged in, we need to know the
+    date, start time and end time, email and phone for
+    contact. When logged in and registered you can also cancel
+    the booking yourself
+    """
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)

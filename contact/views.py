@@ -5,6 +5,12 @@ from .forms import ContactForm
 
 
 def send_email(request):
+    """
+    when user send email to restaurant and all
+    required fields are fiiled in message goes
+    to admin@example.com at backend and user
+    gets a respond succes message
+    """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

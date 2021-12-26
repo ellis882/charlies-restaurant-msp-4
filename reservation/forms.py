@@ -2,6 +2,11 @@ from django import forms
 
 
 class AvailabilityForm(forms.Form):
+    """
+    the required information that is needed
+    to book a table when user fills in the 
+    booking form with input format
+    """
     email = forms.EmailField(required=True)
     phone = forms.IntegerField(required=True)
     TABLE_SIZE_LIST = (

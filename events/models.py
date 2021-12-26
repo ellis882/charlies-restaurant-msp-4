@@ -2,6 +2,12 @@ from django.db import models
 
 
 class Events(models.Model):
+    """
+    info required to manage events from backend
+    when user wants to book an event at the restaurant
+    with this info restaurant manager can contact
+    user for organizing the event
+    """
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.IntegerField()
