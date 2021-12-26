@@ -133,7 +133,7 @@ Browser compatibility was also tested using the Lambdatest App.
 * 
 
 ### Responsiveness / Mobile-Friendly
-The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse]() which allowed for testing on additional devices - no errors were recorded.
+The site's reponsiveness was continuously monitored during the development stage using Chromes *Dev Tools*. Further testing was done using [Lighthouse desktop](validation/lighthouse-desktop.png) and [Lighthouse mobile](validation/lighthouse-mobile.png) which allowed for testing on additional devices.
 
 ### W3C Validation
 The CSS file was checked using [W3C CSS Validation](validation/css3-msp4.png).
